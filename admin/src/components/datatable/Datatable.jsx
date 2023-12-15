@@ -10,7 +10,7 @@ const Datatable = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState([]);
-  const { data, loading, error } = useFetch("${process.env.PATH}/api/${path}");
+  const { data, loading, error } = useFetch(`https://booking-project-new.onrender.com/api/${path}`);
 
   useEffect(() => {
     setList(data)
@@ -18,7 +18,7 @@ const Datatable = ({ columns }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete("${process.env.PATH}/api/${path}/${id}");
+      await axios.delete(`https://booking-project-new.onrender.com/api/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
     } catch (err) {
 

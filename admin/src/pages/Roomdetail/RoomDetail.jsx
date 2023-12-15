@@ -13,7 +13,7 @@ const RoomDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8800/api/rooms/${roomId}`);
+                const response = await axios.get(`https://booking-project-new.onrender.com/api/rooms/${roomId}`);
                 setRoomData(response.data);
             } catch (error) {
                 console.error("Error fetching room details:", error);

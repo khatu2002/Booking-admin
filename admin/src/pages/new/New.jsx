@@ -96,7 +96,7 @@ const New = ({ inputs, title }) => {
         img: url,
       };
 
-      await axios.post("${process.env.PATH}/api/auth/register", newUser);
+      await axios.post("https://booking-project-new.onrender.com/api/auth/register", newUser);
 
       // Successful submission
       setSuccessMessage("Added successfully");

@@ -12,7 +12,7 @@ const UserDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("${process.env.PATH}/api/users/${userId}");
+                const response = await axios.get(`https://booking-project-new.onrender.com/api/users/${userId}`);
                 setUserData(response.data);
             } catch (error) {
                 console.error("Error fetching user details:", error);

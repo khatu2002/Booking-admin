@@ -13,12 +13,12 @@ const HotelDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("${process.env.PATH}/api/hotels/find/${hotelId}");
+                const response = await axios.get(`https://booking-project-new.onrender.com/api/hotels/find/${hotelId}`);
                 setEntityData(response.data);
 
                 // Fetch room names based on room IDs
                 const roomPromises = response.data.rooms.map(async (roomId) => {
-                    const roomResponse = await axios.get("${process.env.PATH}/api/rooms/${roomId}");
+                    const roomResponse = await axios.get(`https://booking-project-new.onrender.com/api/rooms/${roomId}`);
                     return roomResponse.data.title;
                 });
 

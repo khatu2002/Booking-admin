@@ -19,7 +19,7 @@ const UpdateUser = ({ inputs, title }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("${process.env.PATH}/api/users/${userId}");
+                const response = await axios.get(`https://booking-project-new.onrender.com/api/users/${userId}`);
                 setUserData(response.data);
             } catch (error) {
                 console.error("Error fetching user details:", error);
@@ -55,7 +55,7 @@ const UpdateUser = ({ inputs, title }) => {
             }
 
             // Perform the user update
-            await axios.put("${process.env.PATH}/api/users/${userId}", info);
+            await axios.put(`https://booking-project-new.onrender.com/api/users/${userId}`, info);
 
             // Successful update
             setSuccessMessage("Updated successfully");

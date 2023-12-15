@@ -17,7 +17,7 @@ const NewHotel = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const { data, loading, error } = useFetch("${process.env.PATH}/api/rooms");
+  const { data, loading, error } = useFetch("https://booking-project-new.onrender.com/api/rooms");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -66,7 +66,7 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post("${process.env.PATH}/api/hotels", newhotel);
+      await axios.post("https://booking-project-new.onrender.com/api/hotels", newhotel);
       setSuccessMessage("Hotel added successfully");
       setErrorMessage("");
       // Optionally, you can reset the form or perform any other action after success

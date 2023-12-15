@@ -19,7 +19,7 @@ const UpdateHotel = ({ inputs, title }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("${process.env.PATH}/api/hotels/find/${hotelId}");
+                const response = await axios.get(`https://booking-project-new.onrender.com/api/hotels/find/${hotelId}`);
                 setHotelData(response.data);
             } catch (error) {
                 console.error("Error fetching user details:", error);
@@ -55,7 +55,7 @@ const UpdateHotel = ({ inputs, title }) => {
             }
 
             // Perform the user update
-            await axios.put(`${process.env.PATH}/api/hotels/find/${hotelId}`, info);
+            await axios.put(`https://booking-project-new.onrender.com/api/hotels/find/${hotelId}`, info);
 
             // Successful update
             setSuccessMessage("Updated successfully");

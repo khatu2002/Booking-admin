@@ -13,7 +13,7 @@ const NewRoom = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const { data, loading, error } = useFetch("${process.env.PATH}/api/hotels");
+  const { data, loading, error } = useFetch("https://booking-project-new.onrender.com/api/hotels");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -70,7 +70,7 @@ const NewRoom = () => {
 
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
-      await axios.post("${process.env.PATH}/api/rooms/${hotelId}", { ...info, roomNumbers });
+      await axios.post(`https://booking-project-new.onrender.com/api/rooms/${hotelId}`, { ...info, roomNumbers });
       setSuccessMessage("Room added successfully");
       setErrorMessage("");
       // Optionally, you can reset the form or perform any other action after success
