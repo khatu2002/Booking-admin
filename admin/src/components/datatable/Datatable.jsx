@@ -33,10 +33,10 @@ const Datatable = ({ columns }) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={"/${path}/${params.row._id}"} style={{ textDecoration: "none" }}>
+            <Link to={`/${path}/${params.row._id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
-            <Link to={"/${path}/${params.row._id}/update"} style={{ textDecoration: "none" }}>
+            <Link to={`/${path}/${params.row._id}/update`} style={{ textDecoration: "none" }}>
               <div className="updateButton" onClick={() => handleUpdate(params.row._id)}>
                 Update
               </div>
@@ -61,7 +61,7 @@ const Datatable = ({ columns }) => {
     <div className="datatable">
       <div className="datatableTitle">
         {path}
-        <Link to={"/${path}/new"} className="link">
+        <Link to={`/${path}/new`} className="link">
           Add New
         </Link>
       </div>
