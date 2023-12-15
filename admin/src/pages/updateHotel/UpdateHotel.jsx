@@ -55,7 +55,7 @@ const UpdateHotel = ({ inputs, title }) => {
             }
 
             // Perform the user update
-            await axios.put(`https://booking-project-new.onrender.com/api/hotels/find/${hotelId}`, info);
+            await axios.put(`https://booking-project-new.onrender.com/api/hotels/${hotelId}`, info);
 
             // Successful update
             setSuccessMessage("Updated successfully");
